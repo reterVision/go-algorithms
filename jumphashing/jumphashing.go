@@ -1,5 +1,6 @@
 package jumphashing
 
+// JumpHash implements JumpHash algorithm
 func JumpHash(key, buckets int) int {
 	bucket, jump := -1.0, 0.0
 	for jump < float64(buckets) {

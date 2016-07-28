@@ -3,7 +3,7 @@ package kmp
 func getOverlap(pattern string) []int {
 	overlap := make([]int, len(pattern)+1)
 	overlap[0] = -1
-	for i, _ := range pattern {
+	for i := range pattern {
 		overlap[i+1] = overlap[i] + 1
 		for overlap[i+1] > 0 && pattern[i] != pattern[overlap[i+1]-1] {
 			overlap[i+1] = overlap[overlap[i+1]-1] + 1
@@ -29,6 +29,5 @@ func KMP(source, target string) int {
 			i, j = i+1, 0
 		}
 	}
-
 	return -1
 }
